@@ -11,3 +11,8 @@ Korzusehec, Nicolás
 Gabrielli, Inés
 
 Link de pages
+
+Páginas a desarrollar del home banking:
+Login
+Principal
+Derivadas
