@@ -1,0 +1,10 @@
+.contacto {
+background-color: red;
+width: 90px;
+height: 50px;
+border-radius: 10%;
+}
+.contacto__p {
+font-style: bold;
+padding: 2%;
+}
