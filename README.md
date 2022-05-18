@@ -2,17 +2,8 @@
 Repositorio de ITBANK - Curso Full Stack Developer ITBA - Comisión 6 - Grupo 5
 
 Integrantes: 
-Ledesma, Juan Ignacio 
-Falco, Luciano 
-Upstein, Elias 
-Román Molinas, Nicolás 
-Magliotto, Ena Sofía 
-Korzusehec, Nicolás 
-Gabrielli, Inés
+- Ledesma, Juan Ignacio
+- Upstein, Elias
+- Korzusehec, Nicolás
 
-Link de pages
-
-Páginas a desarrollar del home banking:
-Login
-Principal
-Derivadas
+Link de pages: https://juanignacio97.github.io/itbank-com6-gr5/
