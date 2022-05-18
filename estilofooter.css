@@ -29,10 +29,37 @@ height: 150px;
 
 .material-symbols-outlined {
     position: relative;
+    right: 8px;
+    top: 22px;
 }
 
 .bordes {
     border-right: 1px solid rgb(255, 255, 255);
     padding-right: 90px;
 }
+
+.contacto__p2, .sucursales__p2, .preguntas__p2, .acerca__p2 {
+color: white;
+font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contacto__p2 {
+    margin-left: 15px;
+}
+
+.sucursales__p2 {
+position: relative;
+right: 20px;
+}
+
+.preguntas__p2 {
+position: relative;
+right: 30px;
+}
+
+.acerca__p2 {
+position: relative;
+right: 60px;
+}
+
     
