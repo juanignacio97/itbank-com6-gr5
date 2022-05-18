@@ -5,5 +5,5 @@ Integrantes:
 - Ledesma, Juan Ignacio
 - Upstein, Elias
 - Korzusehec, Nicolás
-
+- Magliotto, Sofia
 Link de pages: https://juanignacio97.github.io/itbank-com6-gr5/
