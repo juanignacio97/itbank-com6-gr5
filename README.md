@@ -7,6 +7,7 @@ Integrantes:
 - Korzusehec, Nicolás
 - Magliotto, Sofia
 - Molinas, Nicolas
+- Ines Gabrielli
 
 Destacamos que la rama en la que nos encontramos desarrollando es la llamada DEV, la main se ira actualizando en funcion de definiciones en la dev.
 
