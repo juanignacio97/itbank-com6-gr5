@@ -7,4 +7,7 @@ Integrantes:
 - Korzusehec, Nicolás
 - Magliotto, Sofia
 - Molinas, Nicolas
+
+Destacamos que la rama en la que nos encontramos desarrollando es la llamada DEV, la main se ira actualizando en funcion de definiciones en la dev.
+
 Link de pages: https://juanignacio97.github.io/itbank-com6-gr5/
