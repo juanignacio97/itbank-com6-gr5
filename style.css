@@ -2,7 +2,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.header {
+header {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -12,11 +12,11 @@ body {
     color: white;
 }
 
-#header-left {
+.header-left {
     float: left;
 }
 
-#header-right {
+.header-right {
     float: right;
 }
 
@@ -64,8 +64,15 @@ body {
     border-radius: 10px;
 }
 
+#cuenta {
 
-.footer {
+}
+
+#atajos {
+    
+}
+
+footer {
     margin: 0px;
     position: absolute;
     left: 0px;
