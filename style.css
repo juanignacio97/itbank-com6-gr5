@@ -1,0 +1,75 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    line-height: 0px;
+    background-color: #288BE5;
+    color: white;
+}
+#BarraDiv{
+    background-color: white;
+    margin-right: 150px;
+    width: 100%;
+    height: 45px;
+}
+#barra{
+    width: 950px;
+    height: 40px;
+    border-radius: 25px;
+    margin-left:100px;
+   
+}
+#acceso{
+    float: right;
+    margin-right: 20px;
+    margin-top: 12px;
+
+
+}
+
+#header-left {
+    float: left;
+}
+
+#header-right {
+    float: right;
+}
+
+.logo {
+    text-align: center;
+    user-select: none;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 20px;
+}
+
+.nav-btn {
+    padding: 10px;
+    background-color: transparent;
+    display: inline-block;
+    border: none;
+    color: white;
+    border-radius: 2px;
+}
+
+.nav-btn:hover {
+    background-color: #59a7f0;
+}
+
+.footer {
+    margin: 0px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    background-color: #F4EBEB;
+}
+
+.buttons{
+    background-color: #E5E5E5;
+    padding: 20px;
+}
