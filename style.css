@@ -40,6 +40,31 @@ body {
     background-color: #59a7f0;
 }
 
+#saldocuenta {
+    margin: 90px 5% 50px 5%;
+    padding: 2% 0 2% 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.cuentaid {
+    padding: 5px 0 0 5%;
+    color: grey;
+}
+
+.cuentaestado {
+    padding: 1% 0 0 40%;
+
+}
+
+.cuentaestado b {
+    color: white;
+    background-color: gray;
+    padding: 3px 10px 3px 10px;
+    border-radius: 10px;
+}
+
+
 .footer {
     margin: 0px;
     position: absolute;
