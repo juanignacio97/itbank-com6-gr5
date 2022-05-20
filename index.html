@@ -1,11 +1,15 @@
 <!DOCTYPE html>
     <html lang="en">
         <head>
+            <title>ITBANK</title>
+
             <meta charset="UTF-8">
+            <meta name="description" content="ITBANK es el homebanking desarrollado en el transcurso del curso Fullstack developers proporcionado por el ITBA">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>ITBANK</title>
-            <link rel="stylesheet" type="text/css" href="style.css"/>
+
+            <link rel="shortcut icon" href="#">
+            <link rel="stylesheet" type="text/css" href="/css/style.css"/>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
@@ -21,9 +25,11 @@
                     <a class="nav-btn" type="button" title="Menú"><i class="fa-solid fa-bars fa-2x"></i></a>
                 </div>
                 <div class="header-right">
-                    <a class="nav-btn" type="button" title="Más"><i class="fa-solid fa-circle-plus fa-2x"></i></i></a>
-                    <a class="nav-btn" type="button" title="Soporte técnico"><i class="fa-regular fa-comment-dots fa-2x"></i></i></a>
+                    <!--Vincule el link de boton + con el login para poder tener una conexión entre las dos paginas aunque sea para movernos entre las visuales actuales de ambas.-->
+                    <a href="/login.html" class="nav-btn" type="button" title="Más"><i class="fa-solid fa-circle-plus fa-2x"></i></i></a>
+                    <a class="nav-btn" type="button" title="Soporte técnico"><i class="fa-regular fa-comment-dots fa-2x"></i></a>
                     <a class="nav-btn" type="button" title="Perfil"><i class="fa-regular fa-circle-user fa-2x"></i></a>
+                    <a href=""></a>
                 </div>
                 <div class="logo">
                     <h1>ITBANK</h1>
@@ -31,15 +37,11 @@
             </header>
 
             <main>
-                <div>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut excepturi nesciunt, delectus commodi vel aspernatur incidunt, odio harum totam saepe voluptatum odit consequatur aperiam animi in, sapiente rem sequi eligendi.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut excepturi nesciunt, delectus commodi vel aspernatur incidunt, odio harum totam saepe voluptatum odit consequatur aperiam animi in, sapiente rem sequi eligendi.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut excepturi nesciunt, delectus commodi vel aspernatur incidunt, odio harum totam saepe voluptatum odit consequatur aperiam animi in, sapiente rem sequi eligendi.</p>
-                </div>
-                <div id="BarraDiv">
-                    <input placeholder="Busqueda" id="barra">
-                    <p id = "acceso">Ultimo acceso 14/05 18:30Hs</p>
-                </div>
+                <section id="barrabusqueda">
+                    <input placeholder="Búsqueda" class="barra">
+                    <p class="acceso">Ultimo acceso 14/05 18:30Hs</p>
+                </section>
+
                 <section id="saldocuenta">
                             <h2>Caja de ahorro</h2> 
                             <p class="cuentaid">*******4895</p>
@@ -52,14 +54,14 @@
                             <nav class="btn-group">
                                 <table>
                                     <tr>
-                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="images/transferencia.png" alt="Transferencias" title="Transferencias"><br>Transferencias</a>              </td>
-                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="images/pago_de_servicios.png" alt="Pago de Servicios" title="Pago de Servicios"><br>Pago de Servicios</a></td>
-                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="images/codigoqr.png" alt="Código QR" title="Código QR"><br>Código QR</a></td>
-                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="images/inversiones.png" alt="Inversiones" title="Inversiones"><br>Inversiones</a></td>
-                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="images/prestamos.png" alt="Préstamos" title="Préstamos"><br>Préstamos</a></td>
-                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="images/analisis_de_gastos.png" alt="Análisis de gastos" title="Análisis de gastos"><br>Análisis de gastos</a></td>
-                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="images/calendario_de_pagos.png" alt="Calendario de pagos" title="Calendario de pagos"><br>Calendario de pagos</a></td>
-                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="images/transferencia.png" alt="etc" title="etc"><br>etc</a></td>
+                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="/img/transferencia.png" alt="Transferencias" title="Transferencias"><br>Transferencias</a>              </td>
+                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="/img/pago_de_servicios.png" alt="Pago de Servicios" title="Pago de Servicios"><br>Pago de Servicios</a></td>
+                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="/img/codigoqr.png" alt="Código QR" title="Código QR"><br>Código QR</a></td>
+                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="/img/inversiones.png" alt="Inversiones" title="Inversiones"><br>Inversiones</a></td>
+                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="/img/prestamos.png" alt="Préstamos" title="Préstamos"><br>Préstamos</a></td>
+                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="/img/analisis_de_gastos.png" alt="Análisis de gastos" title="Análisis de gastos"><br>Análisis de gastos</a></td>
+                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="/img/calendario_de_pagos.png" alt="Calendario de pagos" title="Calendario de pagos"><br>Calendario de pagos</a></td>
+                                        <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="/img/transferencia.png" alt="etc" title="etc"><br>etc</a></td>
                                     </tr>
                                 </table>
                             </nav>
