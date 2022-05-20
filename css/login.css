@@ -40,18 +40,18 @@ h1{
     font-size: 22px;
 }
 
-.loginbox p{
+#loginbox p{
     margin: 0;
     padding-top: 13px;
     font-weight: bold;
 }
 
-.loginbox input{
+#loginbox input{
     width: 100%;
     margin-bottom: 20px;
 }
 
-.loginbox input[type="text"], input[type="password"] {
+#loginbox input[type="text"], input[type="password"] {
     border: none;
     border-bottom: 1px solid black;
     background: transparent;
@@ -61,7 +61,7 @@ h1{
     font-size: 16px;
 }
 
-.loginbox input[type="submit"] {
+#loginbox input[type="submit"] {
     border: none;
     outline: none;
     height: 40px;
@@ -71,20 +71,20 @@ h1{
     border-radius: 20px;  
 }
 
-.loginbox input[type="submit"]:hover {
+#loginbox input[type="submit"]:hover {
     cursor: pointer;
     background: #ffc107;
     color: #000;
 }
 
-.loginbox a {
+#loginbox a {
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
     color: darkgrey;
 }
 
-.loginbox a:hover {
+#loginbox a:hover {
     color: #ffc107;
 
 }
