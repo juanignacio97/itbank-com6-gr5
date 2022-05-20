@@ -1,13 +1,15 @@
 html{
     font-family: 'Lato', sans-serif;
 }
+
 body{
     margin: 0;
     padding: 0;
-    background: url(images/harole-ethan-NsOtjQxmpBE-unsplash.jpg);
+    background: url(/img/harole-ethan-NsOtjQxmpBE-unsplash.jpg);
     background-size: cover;
     background-position: center;
 }
+
 .loginbox{
     width: 320px;
     height: 420px;
@@ -21,6 +23,7 @@ body{
     padding: 70px 30px;
     border-radius: 20px;
 }
+
 .avatar{
     width: 100px;
     height: 100px;
@@ -29,23 +32,26 @@ body{
     top: -50px;
     left: calc(50% - 50px);
 }
+
 h1{
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
 }
+
 .loginbox p{
     margin: 0;
     padding-top: 13px;
     font-weight: bold;
 }
+
 .loginbox input{
     width: 100%;
     margin-bottom: 20px;
 }
-.loginbox input[type="text"], input[type="password"]
-{
+
+.loginbox input[type="text"], input[type="password"] {
     border: none;
     border-bottom: 1px solid black;
     background: transparent;
@@ -54,8 +60,8 @@ h1{
     color: black;
     font-size: 16px;
 }
-.loginbox input[type="submit"]
-{
+
+.loginbox input[type="submit"] {
     border: none;
     outline: none;
     height: 40px;
@@ -64,20 +70,21 @@ h1{
     font-size: 18px;
     border-radius: 20px;  
 }
-.loginbox input[type="submit"]:hover
-{
+
+.loginbox input[type="submit"]:hover {
     cursor: pointer;
     background: #ffc107;
     color: #000;
 }
-.loginbox a{
+
+.loginbox a {
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
     color: darkgrey;
 }
-.loginbox a:hover
-{
+
+.loginbox a:hover {
     color: #ffc107;
 
 }

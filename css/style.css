@@ -11,26 +11,6 @@ header {
     background-color: #288BE5;
     color: white;
 }
-#BarraDiv{
-    background-color: white;
-    margin-right: 150px;
-    width: 100%;
-    height: 45px;
-}
-#barra{
-    width: 950px;
-    height: 40px;
-    border-radius: 25px;
-    margin-left:100px;
-   
-}
-#acceso{
-    float: right;
-    margin-right: 20px;
-    margin-top: 12px;
-
-
-}
 
 .header-left {
     float: left;
@@ -60,8 +40,29 @@ header {
     background-color: #59a7f0;
 }
 
+#barrabusqueda{
+    background-color: white;
+    margin: 9% 150px 50px 0;
+    width: 100%;
+    height: 45px;
+}
+
+.barra{
+    width: 950px;
+    height: 40px;
+    border-radius: 25px;
+    margin-left:100px;
+   
+}
+
+.acceso{
+    float: right;
+    margin-right: 20px;
+    margin-top: 12px;
+}
+
 #saldocuenta {
-    margin: 8% 5% 50px 5%;
+    margin: 0 5% 50px 5%;
     padding: 2% 0 2% 0;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
@@ -86,10 +87,6 @@ header {
 
 #cuenta {
     margin: 0 5% 4% 5%;
-}
-
-#atajos {
-    
 }
 
 footer {
