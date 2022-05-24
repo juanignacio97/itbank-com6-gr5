@@ -5,7 +5,7 @@ html{
 body{
     margin: 0;
     padding: 0;
-    background-image: url('img/harole-ethan-NsOtjQxmpBE-unsplash.jpg');
+    background-image: url('../img/harole-ethan-NsOtjQxmpBE-unsplash.jpg');
     background-size: cover;
     background-position: center;
 }
