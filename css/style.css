@@ -102,3 +102,16 @@ footer {
     background-color: #E5E5E5;
     padding: 20px;
 }
+
+.card-header{
+    font-weight: 600;
+}
+
+.card-footer{
+    font-size: smaller;
+}
+
+.card-text{
+    margin: 0;
+    padding: 0;
+}
