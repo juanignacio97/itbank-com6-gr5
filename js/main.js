@@ -1,15 +1,16 @@
-window.addEventListener("load", () => {
-   const api_url = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';
-
+const api_url = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';
 
 async function getData() {
    const fetching = await fetch(api_url);
    const data = await fetching.json();
+   console.log("data original")
+   console.log(data);
    let datos = document.getElementById("datos");
-  let sacarultimo = data.pop();
-  let sacarultimo2 = data.pop()
 
-   console.log(data)
+   let sacarultimo = data.pop();
+   sacarultimo = data.pop();
+
+   console.log(data);
    datos.innerHTML = "";
   
    for (let casa of data){
@@ -31,12 +32,13 @@ async function getData() {
 async function getFecha(){
    const fetching2 = await fetch(api_url);
    const data2 = await fetching2.json();
+
    console.log(data2);
    document.getElementById("fecha").textContent= data2[8].casa.fecha;
    // trae la fecha solamente por que estaba en el ultimo objeto y si no me aparecia en la lista de los precios con valores indefinidos
 }
-getData();
-getFecha();
-} )
+
+getFecha()
 
 
+document.addEventListener("DOMContentLoaded", getData, false);
