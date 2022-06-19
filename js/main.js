@@ -12,9 +12,10 @@ async function cotizacionDolar(){
 
    //Extrae el último elemento del array que contiene la fecha y hora de actualización
    let fecha = data.pop();
-
-   //let dolar = data.pop();
-   //let bitcoin =data.splice(5, 1);
+   //Extrae el último elemento del array que contiene una cotización sin nombre
+   let dolar = data.pop();
+   //Extrae la cotización del bitcoin que no aplica
+   let bitcoin =data.splice(5, 1);
 
    //console.log(data);
 
@@ -23,12 +24,12 @@ async function cotizacionDolar(){
 
    for (let caso of data) {
       let correccionDecimal =caso.casa.compra;
-      correccionDecimal = Number(caso.casa.compra).toFixed(2);    //Corrección a 2 decimales
 
       //tratando corregir que solo hayan 2 decimales, no hubo cambios
-      // if (typeof correccionDecimal != "string") {
-      //    correccionDecimal = Number(caso.casa.compra).toFixed(2);
-      // }
+      if (typeof correccionDecimal != "string") {
+         correccionDecimal = Number(caso.casa.compra).toFixed(2);
+      }
+
       sectionCotizaciones.innerHTML+= `
       <div class="col-6 col-lg-4 col-md-4">
          <div class="card text-center m-2">
