@@ -49,3 +49,8 @@ async function cotizacionDolar(){
 `}};
 
 document.addEventListener("DOMContentLoaded", cotizacionDolar, false);
+
+function actualizar(){
+   sectionCotizaciones.innerHTML="";
+   cotizacionDolar();
+}
