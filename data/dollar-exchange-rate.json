@@ -1,0 +1,102 @@
+[
+    {
+        "casa": {
+            "compra": "121,56",
+            "venta": "127,56",
+            "agencia": "349",
+            "nombre": "Dolar Oficial",
+            "variacion": "0,36",
+            "ventaCero": "TRUE",
+            "decimales": "2"
+        }
+    },
+    {
+        "casa": {
+            "compra": "212,00",
+            "venta": "215,00",
+            "agencia": "310",
+            "nombre": "Dolar Blue",
+            "variacion": "2,38",
+            "ventaCero": "TRUE",
+            "decimales": "2"
+        }
+    },
+    {
+        "casa": {
+            "compra": "No Cotiza",
+            "venta": "0",
+            "agencia": "311",
+            "nombre": "Dolar Soja",
+            "variacion": "0",
+            "ventaCero": "TRUE",
+            "decimales": "3"
+        }
+    },
+    {
+        "casa": {
+            "compra": "209,38",
+            "venta": "211,06",
+            "agencia": "312",
+            "nombre": "Dolar Contado con Liqui",
+            "variacion": "5,91",
+            "ventaCero": "TRUE",
+            "decimales": "2"
+        }
+    },
+    {
+        "casa": {
+            "compra": "227,420",
+            "venta": "226,590",
+            "agencia": "313",
+            "nombre": "Dolar Bolsa",
+            "variacion": "2,770",
+            "ventaCero": "TRUE",
+            "decimales": "3"
+        }
+    },
+    {
+        "casa": {
+            "compra": "9.852,070",
+            "venta": "0",
+            "agencia": "399",
+            "nombre": "Bitcoin",
+            "variacion": "-100,00",
+            "ventaCero": "TRUE",
+            "decimales": "3"
+        }
+    },
+    {
+        "casa": {
+            "nombre": "Dolar turista",
+            "compra": "No Cotiza",
+            "venta": "210,47",
+            "agencia": "406",
+            "variacion": "0,36",
+            "ventaCero": "TRUE",
+            "decimales": "2"
+        }
+    },
+    {
+        "casa": {
+            "compra": "120,23",
+            "venta": "127,71",
+            "agencia": "302",
+            "nombre": "Dolar",
+            "decimales": "3"
+        }
+    },
+    {
+        "casa": {
+            "nombre": "Argentina",
+            "compra": "2.124,00",
+            "venta": "3,96",
+            "mejor_compra": "True",
+            "mejor_venta": "False",
+            "fecha": "05/05/15",
+            "recorrido": "16:30",
+            "afluencia": {},
+            "agencia": "141",
+            "observaciones": {}
+        }
+    }
+]
