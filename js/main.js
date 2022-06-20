@@ -58,27 +58,27 @@ function descargarPDF() {
    const descargar = document.getElementById("cotizacion-dolar");
 
    html2pdf()
-       .set({
-           margin: 1,
-           filename: "Cotizaciones.pdf",
-           image: {
-               type: "jpeg",
-               quality: 0.90,
-           },
-           //Configuraciones del estilo del pdf (para mantener el original del HTML). Librería html2canvas
-           html2canvas: {     
-               scale: 7,
-               letterRendering: true,
-           },
-           //Configuraciones del propio pdf. Librería jsPDF
-           jsPDF: {           
-               unit: "cm",
-               format: "a4",
-               orientation: "portrait",
-           }
-       })
-       .from(descargar)
-       .save()
-       .finally();
-}
+      .set({
+         margin: 1,
+         filename: "Cotizaciones.pdf",
+         image: {
+            type: "jpeg",
+            quality: 0.90,
+         },
+         //Configuraciones del estilo del pdf (para mantener el original del HTML). Librería html2canvas
+         html2canvas: {     
+            scale: 7,
+            letterRendering: true,
+         },
+         //Configuraciones del propio pdf. Librería jsPDF
+         jsPDF: {           
+            unit: "cm",
+            format: "a4",
+            orientation: "portrait",
+         }
+      })
+      .from(descargar)
+      .save()
+      .finally();
+};
 
