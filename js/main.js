@@ -1,6 +1,6 @@
 const api_url = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';   //API para las cotizaciones
 
-let sectionCotizaciones=document.querySelector('#cotizacion-dolar .container .row');
+let sectionCotizaciones = document.querySelector('#cotizacion-dolar .container .row');
 
 //Función que agrega dinámicamente a la página contenido de cotizaciones
 async function cotizacionDolar(){
@@ -82,3 +82,9 @@ function descargarPdf() {
       .finally();
 };
 
+function actualizar(){
+   sectionCotizaciones.innerHTML="";
+   cotizacionDolar();
+};
+
+document.addEventListener("DOMContentLoaded", cotizacionDolar, false);
