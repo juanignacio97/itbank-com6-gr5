@@ -1,124 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>ITBANK</title>
-        <meta name="description" content="ITBANK es el homebanking desarrollado en el transcurso del curso Fullstack developers proporcionado por el ITBA">
-        <link rel="shortcut icon" href="img/avatar2.png">
+<head>
+    <title>ITBANK</title>
+    <meta name="description" content="ITBANK es el homebanking desarrollado en el transcurso del curso Fullstack developers proporcionado por el ITBA">
+    <link rel="shortcut icon" href="img/avatar2.png">
 
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/690ff1dac8.js" crossorigin="anonymous"></script>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/690ff1dac8.js" crossorigin="anonymous"></script>  
 
-        <!--boostrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!--boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-        <!-- Librería para la descarga de PDF -->
-        <script src="js/html2pdf.bundle.min.js"></script>
-    </head>
+    <!-- Librería para la descarga de PDF -->
+    <script src="js/html2pdf.bundle.min.js"></script>
+</head>
 
-    <body>
-        <header>
-            <div class="header-left">
-                <a class="nav-btn" type="button" title="Menú"><i class="fa-solid fa-bars fa-2x"></i></a>
-            </div>
-            <div class="header-right">
-                <!--Vincule el link de boton + con el login para poder tener una conexión entre las dos paginas aunque sea para movernos entre las visuales actuales de ambas.-->
-                <a href="login.html" class="nav-btn" type="button" title="Más"><i class="fa-solid fa-circle-plus fa-2x"></i></i></a>
-                <a class="nav-btn" type="button" title="Soporte técnico"><i class="fa-regular fa-comment-dots fa-2x"></i></a>
-                <a class="nav-btn" type="button" title="Perfil"><i class="fa-regular fa-circle-user fa-2x"></i></a>
-                <a href=""></a>
-            </div>
-            <div class="logo">
-                <h1>ITBANK</h1>
-            </div>
-        </header>
-
-        <main>
-            <section id="barrabusqueda">
-                <input placeholder="Búsqueda" class="barra">
-                <p class="acceso">Ultimo acceso 14/05 18:30Hs</p>
-            </section>
-
-            <section id="cotizacion-dolar">
-                <div class="d-flex align-items-center">
-                <h1 class="ms-4">Cotización del dolar HOY</h1> 
-                <!--el selector pdf para el evento que descargue el pdf-->
-                <button id="pdf" onclick="descargarPDF()" class="btn btn-sm btn-outline-secondary ms-4 pdf">Descargar PDF</button>
-                <!--el selector xsl para el evento que descargue el excel-->
-                <button class="btn btn-sm btn-outline-secondary ms-3 xsl">.xls</button>
-                </div>
-                <div class="container">
-                    <div class="row d-flex mb-5">
- <!--Ejemplo card:
-    <div class="col-6 col-lg-4 col-md-4">
-        <div class="card text-center m-2">
-            <div class="card-header">
-               <i class="fa-solid fa-money-bill-wave" style="color:green"></i> 
-               ${caso.casa.nombre.toUpperCase()}
-            </div>
-            <div class="row card-body">
-               <div class="col-6">
-                     <p class="card-text">COMPRA</p>
-                     <h3 class="card-title">${correccionDecimal}</h3>
-               </div>
-               <div class="col-6">
-                     <p class="card-text">VENTA</p>
-                     <h3 class="card-title">${caso.casa.venta}</h3>
-               </div>
-            </div>
-            <div class="card-footer text-muted">
-            ACTUALIZADO: ${fecha.casa.fecha} ${fecha.casa.recorrido}
-            </div>
+<body>
+    <header>
+        <div class="header-left">
+            <a class="nav-btn" type="button" title="Menú"><i class="fa-solid fa-bars fa-2x"></i></a>
         </div>
-    </div>
+        <div class="header-right">
+            <!--Vincule el link de boton + con el login para poder tener una conexión entre las dos paginas aunque sea para movernos entre las visuales actuales de ambas.-->
+            <a href="login.html" class="nav-btn" type="button" title="Más"><i class="fa-solid fa-circle-plus fa-2x"></i></i></a>
+            <a class="nav-btn" type="button" title="Soporte técnico"><i class="fa-regular fa-comment-dots fa-2x"></i></a>
+            <a class="nav-btn" type="button" title="Perfil"><i class="fa-regular fa-circle-user fa-2x"></i></a>
+            <a href=""></a>
+        </div>
+        <div class="logo">
+            <h1>ITBANK</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="barrabusqueda">
+            <input placeholder="Búsqueda" class="barra">
+            <p class="acceso">Ultimo acceso 14/05 18:30Hs</p>
+        </section>
+
+        <section id="cotizacion-dolar">
+            <div class="d-flex align-items-center">
+            <h1 class="ms-4">Cotización del dolar HOY</h1> 
+            <!--el selector pdf para el evento que descargue el pdf-->
+            <button id="pdf" onclick="descargarPDF()" class="btn btn-sm btn-outline-secondary ms-4 pdf">Descargar PDF</button>
+            <!--el selector xsl para el evento que descargue el excel-->
+            <button class="btn btn-sm btn-outline-secondary ms-3 xsl">.xls</button>
+            </div>
+            <div class="container">
+                <div class="row d-flex mb-5">
+
+<!--Ejemplo card:
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="card text-center m-2">
+                            <div class="card-header">
+                                <i class="fa-solid fa-money-bill-wave" style="color:green"></i> 
+                                ${caso.casa.nombre.toUpperCase()}
+                            </div>
+                            <div class="row card-body">
+                                <div class="col-6 col-sm-12 col-xl-6">
+                                    <p class="card-text">COMPRA</p>
+                                    <h3 class="card-title">
+                                    ${correccionDecimal}</h3>
+                                </div>
+                                <div class="col-6 col-sm-12 col-xl-6">
+                                    <p class="card-text">VENTA</p>
+                                    <h3 class="card-title">${caso.casa.venta}</h3>
+                                </div>
+                            </div>
+                            <div class="card-footer text-muted">
+                            ACTUALIZADO: ${fecha.casa.fecha} ${fecha.casa.recorrido}
+                            </div>
+                        </div>
+                    </div>
 -->
-                    </div>
+                
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="saldocuenta">
-                        <h2>Caja de ahorro</h2> 
-                        <p class="cuentaid">*******4895</p>
-                        <h5 class="cuentaestado">Saldo  <b>ARS</b>    11.808,99</h5>   
-            </section>
+        <section id="saldocuenta">
+                    <h2>Caja de ahorro</h2> 
+                    <p class="cuentaid">*******4895</p>
+                    <h5 class="cuentaestado">Saldo  <b>ARS</b>    11.808,99</h5>   
+        </section>
 
-            <section id="atajos">
-                <div class="d-flex align-items-center justify-content-center buttons">
-                    <div class="row">
-                        <nav class="btn-group">
-                            <table>
-                                <tr>
-                                    <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/transferencia.png" alt="Transferencias" title="Transferencias"><br>Transferencias</a>              </td>
-                                    <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/pago_de_servicios.png" alt="Pago de Servicios" title="Pago de Servicios"><br>Pago de Servicios</a></td>
-                                    <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/codigoqr.png" alt="Código QR" title="Código QR"><br>Código QR</a></td>
-                                    <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/inversiones.png" alt="Inversiones" title="Inversiones"><br>Inversiones</a></td>
-                                    <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/prestamos.png" alt="Préstamos" title="Préstamos"><br>Préstamos</a></td>
-                                    <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/analisis_de_gastos.png" alt="Análisis de gastos" title="Análisis de gastos"><br>Análisis de gastos</a></td>
-                                    <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/calendario_de_pagos.png" alt="Calendario de pagos" title="Calendario de pagos"><br>Calendario de pagos</a></td>
-                                    <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/transferencia.png" alt="etc" title="etc"><br>etc</a></td>
-                                </tr>
-                            </table>
-                        </nav>
-                    </div>
+        <section id="atajos">
+            <div class="d-flex align-items-center justify-content-center buttons">
+                <div class="row">
+                    <nav class="btn-group">
+                        <table>
+                            <tr>
+                                <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/transferencia.png" alt="Transferencias" title="Transferencias"><br>Transferencias</a>              </td>
+                                <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/pago_de_servicios.png" alt="Pago de Servicios" title="Pago de Servicios"><br>Pago de Servicios</a></td>
+                                <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/codigoqr.png" alt="Código QR" title="Código QR"><br>Código QR</a></td>
+                                <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/inversiones.png" alt="Inversiones" title="Inversiones"><br>Inversiones</a></td>
+                                <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/prestamos.png" alt="Préstamos" title="Préstamos"><br>Préstamos</a></td>
+                                <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/analisis_de_gastos.png" alt="Análisis de gastos" title="Análisis de gastos"><br>Análisis de gastos</a></td>
+                                <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/calendario_de_pagos.png" alt="Calendario de pagos" title="Calendario de pagos"><br>Calendario de pagos</a></td>
+                                <td><a href="#" class="btn btn-outline-primary bg-light me-2"><img src="img/transferencia.png" alt="etc" title="etc"><br>etc</a></td>
+                            </tr>
+                        </table>
+                    </nav>
                 </div>
-            </section>  
-        </main>
+            </div>
+        </section>  
+    </main>
 
-        <footer>
-            <div class="enlaces">
-                <h5>Acerca de ITBANK</h5>
-                <h5>Sucursales</h5>
-                <h5>Preguntas frecuentes</h5>
-            </div>  
-        </footer>
+    <footer>
+        <div class="enlaces">
+            <h5>Acerca de ITBANK</h5>
+            <h5>Sucursales</h5>
+            <h5>Preguntas frecuentes</h5>
+        </div>  
+    </footer>
 
-        <script src="./js/main.js"></script>
-    </body>
+    <script src="./js/main.js"></script>
+</body>
 </html>
