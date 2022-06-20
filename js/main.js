@@ -17,7 +17,7 @@ async function cotizacionDolar(){
 
    //Pendiente agregar en formato
    //  <p>Variacion: ${caso.casa.variacion}</p>
-
+   sectionCotizaciones.innerHTML = "";
    for (let caso of data) {
       let correccionDecimal =caso.casa.compra;
       console.log(typeof correccionDecimal !== "string");
@@ -25,7 +25,6 @@ async function cotizacionDolar(){
       if (typeof correccionDecimal !== "string") {
          correccionDecimal = Number(caso.casa.compra).toFixed(2);
       };
-
    sectionCotizaciones.innerHTML+= `
    <div class="col-12 col-sm-6 col-md-4">
       <div class="card text-center m-2">
