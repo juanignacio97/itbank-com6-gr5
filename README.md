@@ -16,8 +16,8 @@ Destacamos que la rama en la que nos encontramos desarrollando es la llamada DEV
 
 ### Links
 
-Link del repositorio: (https://github.com/juanignacio97/itbank-com6-gr5)
-Link de pages: (https://juanignacio97.github.io/itbank-com6-gr5/)
+- Repositorio: (https://github.com/juanignacio97/itbank-com6-gr5)
+- Pages: (https://juanignacio97.github.io/itbank-com6-gr5/)
 
 ### Integrantes y contacto
 
