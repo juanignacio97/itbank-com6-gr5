@@ -5,26 +5,14 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-header {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    line-height: 0px;
-    background-color: #288be5;
+#header {
+    /* position: fixed;
+    z-index: 100; */
+    background-color: #2c4c8c;
+}
+
+#logo {
     color: white;
-}
-
-.header-left {
-    float: left;
-}
-
-.header-right {
-    float: right;
-}
-
-.logo {
-    text-align: center;
     user-select: none;
     font-family: "Allerta Stencil", sans-serif;
     font-size: 20px;
@@ -40,54 +28,16 @@ header {
 }
 
 .nav-btn:hover {
-    background-color: #59a7f0;
-}
-
-#barrabusqueda {
-    background-color: white;
-    margin: 9% 150px 50px 0;
-    width: 100%;
-    height: 45px;
-}
-
-.barra {
-    width: 950px;
-    height: 40px;
-    border-radius: 25px;
-    margin-left: 100px;
-}
-
-.acceso {
-    float: right;
-    margin-right: 20px;
-    margin-top: 12px;
-}
-
-#saldocuenta {
-    margin: 0 5% 50px 5%;
-    padding: 2% 0 2% 0;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.cuentaid {
-    padding: 5px 0 0 5%;
-    color: grey;
-}
-
-.cuentaestado {
-    padding: 1% 0 0 40%;
-}
-
-.cuentaestado b {
     color: white;
-    background-color: gray;
-    padding: 3px 10px 3px 10px;
-    border-radius: 10px;
+    background-color: #4c71bb;
 }
 
-#cuenta {
-    margin: 0 5% 4% 5%;
+#saldo-cuenta {
+    width: 60rem;
+}
+
+#acceso {
+    font-size: smaller;
 }
 
 footer {
@@ -119,7 +69,7 @@ footer {
 
 footer {
     background-size: cover;
-    background-color: #2c78ce;
+    background-color: #2c4c8c;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -130,7 +80,7 @@ footer {
 .acerca,
 .sucursales,
 .preguntas {
-    background-color: #2c78ce98;
+    background-color: #2c4c8c;
     width: 15%;
     font-size: 16px;
     left: 17.5%;

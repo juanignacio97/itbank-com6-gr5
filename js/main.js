@@ -49,8 +49,6 @@ async function cotizacionDolar(){
    </div>`
 }};
 
-document.addEventListener("DOMContentLoaded", cotizacionDolar, false);
-
 //Función que agrega la funcionalidad de descargar el pdf del ID seleccionado. Utiliza la librería HTML2PDF
 //HTML2PDF: junta las 2 librerías html2canvas y jsPDF
 function descargarPdf() {
