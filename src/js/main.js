@@ -2,6 +2,7 @@ const api_url = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';  
 
 let sectionCotizaciones = document.querySelector('#cotizacion-dolar .container .row');
 
+
 //Función que agrega dinámicamente a la página contenido de cotizaciones
 async function cotizacionDolar(){
    const fetching = await fetch(api_url);
@@ -79,4 +80,34 @@ function descargarPdf() {
       .finally();
 };
 
-document.addEventListener("DOMContentLoaded", cotizacionDolar, false);
+
+async function saldoCuenta(){
+   let saldoCuenta = document.querySelector('#saldo-cuenta .card');
+   const fetching = await fetch('./src/data/saldoCuenta.json');
+   const data = await fetching.json();
+
+   saldoCuenta.innerHTML = `
+   <div class="card-header d-flex align-items-center">
+      <span class="me-auto fs-4 fw-semibold">Caja de Ahorro</span>
+      <span class="text-muted">Último acceso: ${data.ultimo_acceso.fecha} ${data.ultimo_acceso.fecha}Hs</span>
+   </div>
+   <div class="card-body">
+      <p class="card-text mb-3">
+         <span class="fw-semibold">${data.tipo_de_cuenta}</span>
+         &nbsp;
+         <span>${data.id}</span>
+      </p>
+      <h4 class="card-text mb-2">$ <span class="fw-bold">${data.saldo.ars}</span></h4>
+
+      <h5 class="card-text text-success mb-3">U$S <span class="fw-bold">${data.saldo.usd}</span></h5>
+
+      <p class="card-text">CBU: <span class="fw-semibold">${data.cbu}</span></p>
+
+      <p class="card-text">Alias: <span class="fw-semibold">${data.alias}</span></p>
+   </div>
+   `;
+};
+   
+
+
+document.addEventListener("DOMContentLoaded", saldoCuenta, cotizacionDolar, false);

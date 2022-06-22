@@ -52,6 +52,11 @@ footer .container-fluid {
     width: 60rem;
 }
 
+#saldo-cuenta .text-muted {
+    font-size: smaller;
+}
+
 #ultimo-acceso {
     font-size: smaller;
 }
+
