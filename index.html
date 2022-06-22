@@ -34,250 +34,256 @@
     </head>
 
     <body>
-        <header id="header" class="container-fluid mb-2">
+        <header class="container-fluid mb-2">
             <nav class="nav d-flex align-items-center justify-content-between">
                 <a class="nav-btn" type="button" title="Menú"><i class="fa-solid fa-bars fa-3x"></i></a>
-                <a class="nav-link disabled fs-1" id="logo">ITBANK</a>
-                <a class="nav-btn btn-lg" type="button" title="Perfil"><i class="fa-regular fa-circle-user fa-3x"></i></a>
+                <a class="nav-link disabled fs-1 header-logo">ITBANK</a>
+                <a class="nav-btn btn-lg" type="button" title="Perfil" href="/login.html"><i class="fa-regular fa-circle-user fa-3x"></i></a>
             </nav>
         </header>
 
         <main>
-            <section id="barra-busqueda" class="container text-center mb-4 mt-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Buscar servicios, transferencias, préstamos, etc." />
-            </section>
-
-            <section id="saldo-cuenta" class="container mb-4">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="ocultar-datos" />
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Ocultar datos</label>
-                </div>
-                <div class="card">
-                    <div class="card-header d-flex align-items-center">
-                        <span class="me-auto fs-4">Caja de Ahorro</span>
-                        <span class="text-muted" id="acceso">Último acceso: 14/05/22 18:30Hs</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="row mb-2">
-                            <p class="card-text"><span class="fw-semibold" id="tipo-cuenta">Cuenta única</span><span id="cuenta-id"> 123-456789/5</span></p>
-                        </div>
-
-                        <div class="row">
-                            <h4 class="card-text">$ <span id="saldo-ars" class="fw-bold">11.808,99</span></h4>
-                        </div>
-                        <div class="row mb-2">
-                            <h5 class="card-text text-success">U$S <span id="saldo-usd" class="fw-bold">21,45</span></h5>
-                        </div>
-                        <div class="row">
-                            <p class="card-text">CBU: <span id="cbu" class="fw-semibold">0764645887200057372954</span></p>
-                        </div>
-                        <div class="row">
-                            <p class="card-text">Alias: <span id="alias" class="fw-semibold">ALIAS.DEFAULT.PLACEHOLDER</span></p>
-                        </div>
-                    </div>
+            <section id="barra-busqueda">
+                <div class="container text-center my-4">
+                    <input type="text" class="form-control form-control-lg" placeholder="Buscar servicios, transferencias, préstamos, etc."/>
                 </div>
             </section>
 
-            <section id="cotizacion-dolar" class="container">
-                <div class="d-flex align-items-center">
-                    <h3 class="ms-4">Cotización del dolar HOY</h3>
-                    <!--Boton que actualiza la impresion el apartado-->
-                    <button class="btn btn-sm btn-outline-secondary ms-3" onclick="actualizar()"><i class="fa-solid fa-arrow-rotate-right"></i> Actualizar</button>
-                    <!--el selector pdf para el evento que descargue el pdf-->
-                    <button id="pdf" onclick="descargarPdf()" class="btn btn-sm btn-outline-secondary ms-3">Descargar PDF</button>
-                    <!--el selector xsl para el evento que descargue el excel-->
-                    <button class="btn btn-sm btn-outline-secondary ms-3">Descargar XLS</button>
+            <section id="saldo-cuenta">
+                <div class="container mb-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch"  onclick="ocultarDatos()"/>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Ocultar datos</label>
+                    </div>
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center">
+                            <span class="me-auto fs-4">Caja de Ahorro</span>
+                            <span class="text-muted ultimo-acceso">Último acceso: 14/05/22 18:30Hs</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <p class="card-text">
+                                    <span class="tipo-cuenta fw-semibold">Cuenta única</span>
+                                    <span class="cuenta-id"> 123-456789/5</span>
+                                </p>
+                            </div>
+
+                            <h4 class="card-text">$ <span class="fw-bold saldo-ars">11.808,99</span></h4>
+
+                            <h5 class="card-text text-success mb-2">U$S <span class="fw-bold saldo-usd">21,45</span></h5>
+                            
+                            <p class="card-text">CBU: <span class="fw-semibold cbu">0764645887200057372954</span></p>
+
+                            <div class="row">
+                                <p class="card-text">Alias: <span id="alias" class="fw-semibold">ALIAS.DEFAULT.PLACEHOLDER</span></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </section>
+
+            <section id="cotizacion-dolar">
                 <div class="container">
-                    <div class="row d-flex mb-5">
-                        <!--default view-->
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="card text-center m-2">
-                                <div class="card-header">
-                                    <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
-                                    Waiting...
-                                </div>
-                                <div class="row card-body">
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">COMPRA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                    <div class="d-flex align-items-center">
+                        <h3 class="ms-4">Cotización del dolar HOY</h3>
+                        <!--Boton que actualiza la impresion el apartado-->
+                        <button class="btn btn-sm btn-outline-secondary ms-3" onclick="cotizacionDolar()"><i class="fa-solid fa-arrow-rotate-right"></i> Actualizar</button>
+                        <!--el selector pdf para el evento que descargue el pdf-->
+                        <button id="pdf" onclick="descargarPdf()" class="btn btn-sm btn-outline-secondary ms-3">Descargar PDF</button>
+                        <!--el selector xsl para el evento que descargue el excel-->
+                        <button class="btn btn-sm btn-outline-secondary ms-3">Descargar XLS</button>
+                    </div>
+                    <div class="container">
+                        <div class="row d-flex mb-5">
+                            <!--default view-->
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card text-center m-2">
+                                    <div class="card-header">
+                                        <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
+                                        Waiting...
                                     </div>
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">VENTA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                                    <div class="row card-body">
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">COMPRA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">VENTA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
                                     </div>
+                                    <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                                 </div>
-                                <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="card text-center m-2">
-                                <div class="card-header">
-                                    <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
-                                    Waiting...
-                                </div>
-                                <div class="row card-body">
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">COMPRA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card text-center m-2">
+                                    <div class="card-header">
+                                        <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
+                                        Waiting...
                                     </div>
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">VENTA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                                    <div class="row card-body">
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">COMPRA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">VENTA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
                                     </div>
+                                    <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                                 </div>
-                                <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="card text-center m-2">
-                                <div class="card-header">
-                                    <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
-                                    Waiting...
-                                </div>
-                                <div class="row card-body">
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">COMPRA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card text-center m-2">
+                                    <div class="card-header">
+                                        <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
+                                        Waiting...
                                     </div>
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">VENTA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                                    <div class="row card-body">
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">COMPRA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">VENTA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
                                     </div>
+                                    <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                                 </div>
-                                <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="card text-center m-2">
-                                <div class="card-header">
-                                    <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
-                                    Waiting...
-                                </div>
-                                <div class="row card-body">
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">COMPRA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card text-center m-2">
+                                    <div class="card-header">
+                                        <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
+                                        Waiting...
                                     </div>
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">VENTA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                                    <div class="row card-body">
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">COMPRA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">VENTA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
                                     </div>
+                                    <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                                 </div>
-                                <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="card text-center m-2">
-                                <div class="card-header">
-                                    <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
-                                    Waiting...
-                                </div>
-                                <div class="row card-body">
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">COMPRA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card text-center m-2">
+                                    <div class="card-header">
+                                        <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
+                                        Waiting...
                                     </div>
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">VENTA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                                    <div class="row card-body">
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">COMPRA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">VENTA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
                                     </div>
+                                    <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                                 </div>
-                                <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="card text-center m-2">
-                                <div class="card-header">
-                                    <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
-                                    Waiting...
-                                </div>
-                                <div class="row card-body">
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">COMPRA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card text-center m-2">
+                                    <div class="card-header">
+                                        <i class="fa-solid fa-money-bill-wave" style="color: green"></i>
+                                        Waiting...
                                     </div>
-                                    <div class="col-6 col-sm-12 col-xl-6">
-                                        <p class="card-text">VENTA</p>
-                                        <h3 class="card-title">Waiting...</h3>
+                                    <div class="row card-body">
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">COMPRA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
+                                        <div class="col-6 col-sm-12 col-xl-6">
+                                            <p class="card-text">VENTA</p>
+                                            <h3 class="card-title">Waiting...</h3>
+                                        </div>
                                     </div>
+                                    <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                                 </div>
-                                <div class="card-footer text-muted">ACTUALIZADO: Waiting... Waiting...</div>
                             </div>
+                            <!--End default view-->
                         </div>
-                        <!--End default view-->
                     </div>
                 </div>
             </section>
 
-            <section id="ultimos-movimientos" class="container">
-                <div class="row">
+            <section id="ultimos-movimientos">
+                <div class="container">
                     <h3>Últimos movimientos</h3>
-                </div>
-                <div class="row d-flex mb-2">
-                    <div class="col-auto me-auto flex-grow-1">
-                        <div class="input-group input-group-sm">
-                            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-                            <input class="form-control" type="text" placeholder="Buscar movimientos" />
+                    <div class="row mb-2">
+                        <div class="col-auto flex-grow-1">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input class="form-control" type="text" placeholder="Buscar movimientos" />
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-print"></i> Imprimir</button>
+                            <button class="btn btn-sm btn-outline-secondary ms-2"><i class="fa-solid fa-download"></i> Descargar</button>
                         </div>
                     </div>
-                    <div class="col-auto">
-                        <button class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-print"></i> Imprimir</button>
-                        <button class="btn btn-sm btn-outline-secondary ms-2"><i class="fa-solid fa-download"></i> Descargar</button>
-                    </div>
+                    <table id="movimientos" class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Importe</th>
+                                <th scope="col">Saldo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>20/06/22</td>
+                                <td>
+                                    <span class="fw-semibold">Transferencia</span>
+                                    <br />
+                                    <span>Detalles</span>
+                                </td>
+                                <td>- $ 3.000</td>
+                                <td>9.000</td>
+                            </tr>
+                            <tr>
+                                <td>19/06/22</td>
+                                <td>
+                                    <span class="fw-semibold">Depósito</span>
+                                    <br />
+                                    <span>Detalles</span>
+                                </td>
+                                <td>$ 10.000</td>
+                                <td>12.000</td>
+                            </tr>
+                            <tr>
+                                <td>18/06/22</td>
+                                <td>
+                                    <span class="fw-semibold">Transferencia</span>
+                                    <br />
+                                    <span>Detalles</span>
+                                </td>
+                                <td>- $ 1.000</td>
+                                <td>2.000</td>
+                            </tr>
+                            <tr>
+                                <td>17/06/22</td>
+                                <td>
+                                    <span class="fw-semibold">Depósito</span>
+                                    <br />
+                                    <span>Detalles</span>
+                                </td>
+                                <td>$ 1.000</td>
+                                <td>3.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <table id="movimientos" class="table table-hover">
-                    <thead class="table-light">
-                        <tr>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Importe</th>
-                            <th scope="col">Saldo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>20/06/22</td>
-                            <td>
-                                <span class="fw-semibold">Transferencia</span>
-                                <br />
-                                <span>Detalles</span>
-                            </td>
-                            <td>- $ 3.000</td>
-                            <td>9.000</td>
-                        </tr>
-                        <tr>
-                            <td>19/06/22</td>
-                            <td>
-                                <span class="fw-semibold">Depósito</span>
-                                <br />
-                                <span>Detalles</span>
-                            </td>
-                            <td>$ 10.000</td>
-                            <td>12.000</td>
-                        </tr>
-                        <tr>
-                            <td>18/06/22</td>
-                            <td>
-                                <span class="fw-semibold">Transferencia</span>
-                                <br />
-                                <span>Detalles</span>
-                            </td>
-                            <td>- $ 1.000</td>
-                            <td>2.000</td>
-                        </tr>
-                        <tr>
-                            <td>17/06/22</td>
-                            <td>
-                                <span class="fw-semibold">Depósito</span>
-                                <br />
-                                <span>Detalles</span>
-                            </td>
-                            <td>$ 1.000</td>
-                            <td>3.000</td>
-                        </tr>
-                    </tbody>
-                </table>
             </section>
 
             <section id="atajos" class="container">
@@ -327,7 +333,7 @@
         </main>
 
         <footer>
-            <div class="bordes" style="margin-left: 60px">
+            <div class="bordes m-auto">
                 <div class="contacto">
                     <div>
                         <span class="material-symbols-outlined"> call </span>
