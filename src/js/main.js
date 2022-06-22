@@ -2,6 +2,9 @@ const api_url = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';  
 
 let sectionCotizaciones = document.querySelector('#cotizacion-dolar .container .row');
 
+let seccionSaldo = document.querySelector('#saldo-cuenta .card');
+
+
 
 //Función que agrega dinámicamente a la página contenido de cotizaciones
 async function cotizacionDolar(){
@@ -47,8 +50,8 @@ async function cotizacionDolar(){
          ACTUALIZADO: ${fecha.casa.fecha} ${fecha.casa.recorrido}
          </div>
       </div>
-   </div>`
-}};
+   </div>
+`}};
 
 //Función que agrega la funcionalidad de descargar el pdf del ID seleccionado. Utiliza la librería HTML2PDF
 //HTML2PDF: junta las 2 librerías html2canvas y jsPDF
@@ -82,14 +85,14 @@ function descargarPdf() {
 
 
 async function saldoCuenta(){
-   let saldoCuenta = document.querySelector('#saldo-cuenta .card');
-   const fetching = await fetch('./src/data/saldoCuenta.json');
-   const data = await fetching.json();
-
-   saldoCuenta.innerHTML = `
+   const response = await fetch('http://127.0.0.1:5500/src/data/saldoCuenta.json');
+   const data = await response.json();
+   console.log(data)
+   
+   seccionSaldo.innerHTML = `
    <div class="card-header d-flex align-items-center">
       <span class="me-auto fs-4 fw-semibold">Caja de Ahorro</span>
-      <span class="text-muted">Último acceso: ${data.ultimo_acceso.fecha} ${data.ultimo_acceso.fecha}Hs</span>
+      <span class="text-muted">Último acceso: ${data.ultimo_acceso.fecha} ${data.ultimo_acceso.hora}Hs</span>
    </div>
    <div class="card-body">
       <p class="card-text mb-3">
@@ -107,7 +110,11 @@ async function saldoCuenta(){
    </div>
    `;
 };
-   
 
+function actualizarPagina(){
+   saldoCuenta();
+   cotizacionDolar();
+}
 
-document.addEventListener("DOMContentLoaded", saldoCuenta, cotizacionDolar, false);
+document.addEventListener("DOMContentLoaded", actualizarPagina,false);
+
