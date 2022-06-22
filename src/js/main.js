@@ -79,9 +79,4 @@ function descargarPdf() {
       .finally();
 };
 
-function actualizar(){
-   sectionCotizaciones.innerHTML="";
-   cotizacionDolar();
-};
-
 document.addEventListener("DOMContentLoaded", cotizacionDolar, false);
