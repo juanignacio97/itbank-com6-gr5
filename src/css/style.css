@@ -8,14 +8,9 @@ body {
     font-family: "Ubuntu", sans-serif;
 }
 
-footer {
-    background-size: cover;
+footer .container-fluid {
     background-color: #2c4c8c;
     color: white;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 150px;
 }
 
 .nav-btn {
@@ -37,41 +32,8 @@ footer {
     padding: 20px;
 }
 
-.card-header {
-    font-weight: 600;
-}
-
-.card-footer {
+#cotizacion-dolar .card-footer {
     font-size: smaller;
-}
-
-.card-text {
-    margin: 0;
-    padding: 0;
-}
-
-.material-symbols-outlined {
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-}
-
-.md-dark {
-    color: rgba(0, 0, 0, 0.54);
-}
-
-.md-light {
-    color: rgba(255, 255, 255, 1);
-}
-
-.md-24 {
-    font-size: 24px;
-}
-
-.md-36 {
-    font-size: 36px;
-}
-
-.md-48 {
-    font-size: 48px;
 }
 
 #logo {
@@ -81,10 +43,15 @@ footer {
     font-size: 20px;
 }
 
-#saldo-cuenta {
+#saldo-cuenta .card-text {
+    margin: 0;
+    padding: 0;
+}
+
+#saldo-cuenta .container {
     width: 60rem;
 }
 
-#acceso {
+#ultimo-acceso {
     font-size: smaller;
 }

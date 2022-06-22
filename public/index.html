@@ -11,9 +11,6 @@
 
         <link rel="stylesheet" type="text/css" href="../src/css/style.css" />
 
-        <!-- Google Fonts & Icons -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
         <!-- Font Awesome (íconos) -->
         <script src="https://kit.fontawesome.com/690ff1dac8.js" crossorigin="anonymous"></script>
 
@@ -27,55 +24,52 @@
     <body>
         <header id="header" class="container-fluid mb-2">
             <nav class="nav d-flex align-items-center">
-                <!-- <a class="nav-btn" type="button" title="Menú"><i class="fa-solid fa-bars fa-3x"></i></a> -->
                 <a><img src="../src/img/browser-icon.png" alt="ITBANK-LOGO" style="height: 64px; width: 64px; user-select: none" /></a>
                 <span class="disabled fs-1" id="logo">ITBANK</span>
-                <a class="nav-btn ms-auto" type="button" title="Menú"><span class="material-symbols-outlined md-48">menu</span></a>
+                <a class="nav-btn ms-auto" type="button" title="Menú"><i class="fa-solid fa-bars fa-2x"></i></a>
             </nav>
         </header>
 
         <main>
             <section id="barra-busqueda">
-                <div class="container text-center my-4">
-                    <input type="text" class="form-control form-control-lg" placeholder="Buscar servicios, transferencias, préstamos, etc."/>
+                <div class="container mb-4 text-center">
+                    <div class="ms-4 me-4">
+                        <input class="form-control form-control-lg" type="text" placeholder="Buscar servicios, transferencias, préstamos, etc." />
+                    </div>
                 </div>
             </section>
 
             <section id="saldo-cuenta">
                 <div class="container mb-4">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch"  onclick="ocultarDatos()"/>
+                        <input class="form-check-input" type="checkbox" role="switch" onclick="ocultarDatos()" />
                         <label class="form-check-label" for="flexSwitchCheckDefault">Ocultar datos</label>
                     </div>
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <span class="me-auto fs-4">Caja de Ahorro</span>
-                            <span class="text-muted ultimo-acceso">Último acceso: 14/05/22 18:30Hs</span>
+                            <span class="me-auto fs-4 fw-semibold">Caja de Ahorro</span>
+                            <span class="text-muted" id="ultimo-acceso">Último acceso: 14/05/22 18:30Hs</span>
                         </div>
                         <div class="card-body">
-                            <div class="row mb-2">
-                                <p class="card-text">
-                                    <span class="tipo-cuenta fw-semibold">Cuenta única</span>
-                                    <span class="cuenta-id"> 123-456789/5</span>
-                                </p>
-                            </div>
+                            <p class="card-text mb-3">
+                                <span id="tipo-cuenta" class="fw-semibold">Cuenta única</span>
+                                &nbsp;
+                                <span id="cuenta-id">123-456789/5</span>
+                            </p>
+                            <h4 class="card-text mb-2">$ <span is="saldo-ars" class="fw-bold">11.808,99</span></h4>
 
-                            <h4 class="card-text">$ <span class="fw-bold saldo-ars">11.808,99</span></h4>
+                            <h5 class="card-text text-success mb-3">U$S <span id="saldo-usd" class="fw-bold">21,45</span></h5>
 
-                            <h5 class="card-text text-success mb-2">U$S <span class="fw-bold saldo-usd">21,45</span></h5>
-                            
-                            <p class="card-text">CBU: <span class="fw-semibold cbu">0764645887200057372954</span></p>
+                            <p class="card-text">CBU: <span id="cbu" class="fw-semibold">0764645887200057372954</span></p>
 
-                            <div class="row">
-                                <p class="card-text">Alias: <span id="alias" class="fw-semibold">ALIAS.DEFAULT.PLACEHOLDER</span></p>
-                            </div>
+                            <p class="card-text">Alias: <span id="alias" class="fw-semibold">ALIAS.DEFAULT.PLACEHOLDER</span></p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="cotizacion-dolar">
-                <div class="container">
+                <div class="container mb-4">
                     <div class="d-flex align-items-center">
                         <h3 class="ms-4">Cotización del dolar HOY</h3>
                         <!--Boton que actualiza la impresion el apartado-->
@@ -86,7 +80,7 @@
                         <button class="btn btn-sm btn-outline-secondary ms-3">Descargar XLS</button>
                     </div>
                     <div class="container">
-                        <div class="row d-flex mb-5">
+                        <div class="row d-flex">
                             <!--default view-->
                             <div class="col-12 col-sm-6 col-md-4">
                                 <div class="card text-center m-2">
@@ -210,9 +204,9 @@
 
             <section id="ultimos-movimientos">
                 <div class="container">
-                    <h3>Últimos movimientos</h3>
-                    <div class="row mb-2">
-                        <div class="col-auto flex-grow-1">
+                    <h3 class="ms-4">Últimos movimientos</h3>
+                    <div class="row ms-4 me-4 mb-2">
+                        <div class="col-auto me-auto flex-fill">
                             <div class="input-group input-group-sm">
                                 <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
                                 <input class="form-control" type="text" placeholder="Buscar movimientos" />
@@ -223,58 +217,60 @@
                             <button class="btn btn-sm btn-outline-secondary ms-2"><i class="fa-solid fa-download"></i> Descargar</button>
                         </div>
                     </div>
-                    <table id="movimientos" class="table table-hover">
-                        <thead class="table-light">
-                            <tr>
-                                <th scope="col">Fecha</th>
-                                <th scope="col">Descripción</th>
-                                <th scope="col">Importe</th>
-                                <th scope="col">Saldo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>20/06/22</td>
-                                <td>
-                                    <span class="fw-semibold">Transferencia</span>
-                                    <br />
-                                    <span>Detalles</span>
-                                </td>
-                                <td>- $ 3.000</td>
-                                <td>9.000</td>
-                            </tr>
-                            <tr>
-                                <td>19/06/22</td>
-                                <td>
-                                    <span class="fw-semibold">Depósito</span>
-                                    <br />
-                                    <span>Detalles</span>
-                                </td>
-                                <td>$ 10.000</td>
-                                <td>12.000</td>
-                            </tr>
-                            <tr>
-                                <td>18/06/22</td>
-                                <td>
-                                    <span class="fw-semibold">Transferencia</span>
-                                    <br />
-                                    <span>Detalles</span>
-                                </td>
-                                <td>- $ 1.000</td>
-                                <td>2.000</td>
-                            </tr>
-                            <tr>
-                                <td>17/06/22</td>
-                                <td>
-                                    <span class="fw-semibold">Depósito</span>
-                                    <br />
-                                    <span>Detalles</span>
-                                </td>
-                                <td>$ 1.000</td>
-                                <td>3.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="ms-4 me-4">
+                        <table id="movimientos" class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Importe</th>
+                                    <th scope="col">Saldo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>20/06/22</td>
+                                    <td>
+                                        <span class="fw-semibold">Transferencia</span>
+                                        <br />
+                                        <span>Detalles</span>
+                                    </td>
+                                    <td>- $ 3.000</td>
+                                    <td>9.000</td>
+                                </tr>
+                                <tr>
+                                    <td>19/06/22</td>
+                                    <td>
+                                        <span class="fw-semibold">Depósito</span>
+                                        <br />
+                                        <span>Detalles</span>
+                                    </td>
+                                    <td>$ 10.000</td>
+                                    <td>12.000</td>
+                                </tr>
+                                <tr>
+                                    <td>18/06/22</td>
+                                    <td>
+                                        <span class="fw-semibold">Transferencia</span>
+                                        <br />
+                                        <span>Detalles</span>
+                                    </td>
+                                    <td>- $ 1.000</td>
+                                    <td>2.000</td>
+                                </tr>
+                                <tr>
+                                    <td>17/06/22</td>
+                                    <td>
+                                        <span class="fw-semibold">Depósito</span>
+                                        <br />
+                                        <span>Detalles</span>
+                                    </td>
+                                    <td>$ 1.000</td>
+                                    <td>3.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
@@ -316,67 +312,30 @@
             </section>
         </main>
 
-        <!-- <footer>
-            <div class="bordes" style="margin-left: 60px">
-                <div class="contacto">
-                    <div>
-                        <span class="material-symbols-outlined"> call </span>
+        <footer>
+            <div class="container-fluid">
+                <div class="row d-flex text-center border p-3">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-2 border-end">
+                        <i class="fa-solid fa-phone fa-2x mb-3"></i>
+                        <br />
+                        <span class="fs-5 fs-semibold">Contáctanos</span>
                     </div>
-                    <p class="contacto__p">Contactanos</p>
-                </div>
-                <a class="contacto__p2" href="#">Atencion al cliente </a>
-            </div>
 
-            <div class="bordes">
-                <div class="sucursales">
-                    <div>
-                        <span class="material-symbols-outlined"> pin_drop </span>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-2 border-end">
+                        <i class="fa-solid fa-location-dot fa-2x mb-3"></i>
+                        <br />
+                        <p class="fs-5 fs-semibold">Sucursales</p>
                     </div>
-                    <p class="sucursales__p">Sucursales</p>
-                </div>
-                <a class="sucursales__p2" href="#">Encontra nuestras sucursales</a>
-            </div>
-
-            <div class="bordes">
-                <div class="preguntas">
-                    <div>
-                        <span class="material-symbols-outlined"> help_center </span>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-2 border-end">
+                        <i class="fa-solid fa-circle-question fa-2x mb-3"></i>
+                        <br />
+                        <p class="fs-5 fs-semibold">Preguntas Frecuentes</p>
                     </div>
-                    <div>
-                        <p class="preguntas__p">Preguntas Frecuentes</p>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-2">
+                        <i class="fa-solid fa-globe fa-2x mb-3"></i>
+                        <br />
+                        <p class="fs-5 fs-semibold">Sobre ITBANK</p>
                     </div>
-                </div>
-                <a class="preguntas__p2" href="#">Operaciones en Homebanking</a>
-            </div>
-
-            <div class="divisor-acerca">
-                <div class="acerca">
-                    <div>
-                        <span class="material-symbols-outlined"> language </span>
-                    </div>
-                    <p class="acerca__p">Sobre ITBANK</p>
-                </div>
-                <a class="acerca__p2" href="#">Satisfacemos tus necesidades en todo el pais</a>
-            </div>
-        </footer> -->
-
-        <footer class="container-fluid">
-            <div class="row d-flex align-items-center text-center">
-                <div class="col">
-                    <span class="material-symbols-outlined md-48">call</span>
-                    <p class="fs-5 fs-semibold">Contactanos</p>
-                </div>
-                <div class="col">
-                    <span class="material-symbols-outlined">pin_drop</span>
-                    <p class="fs-5 fs-semibold">Sucursales</p>
-                </div>
-                <div class="col">
-                    <span class="material-symbols-outlined">help_center</span>
-                    <p class="fs-5 fs-semibold">Preguntas Frecuentes</p>
-                </div>
-                <div class="col">
-                    <span class="material-symbols-outlined">language</span>
-                    <p class="fs-5 fs-semibold">Sobre ITBANK</p>
                 </div>
             </div>
         </footer>
