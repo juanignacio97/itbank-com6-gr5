@@ -111,10 +111,37 @@ async function saldoCuenta(){
    `;
 };
 
+function ocultarDatos() { // Implementación harcodeada, cuando se implemente el back deberá cambiarse los placeholder
+   let cuenta_id = document.querySelector('#cuenta-id');
+   let cbu = document.querySelector('#cbu');
+   let alias = document.querySelector('#alias');
+   let saldo_ars = document.querySelector('#saldo-ars');
+   let saldo_usd = document.querySelector('#saldo-usd');
+
+   const chk_ocultar = document.querySelector('#check-ocultar');
+
+   if (chk_ocultar.checked === true) {
+      cuenta_id.innerHTML = '***-******/*';
+      cbu.innerHTML = '******';
+      alias.innerHTML = '******';
+      saldo_ars.innerHTML = '***';
+      saldo_usd.innerHTML = '***';
+   } else {
+      cuenta_id.innerHTML = '123-456789/5';
+      cbu.innerHTML = '0764645887200057372954';
+      alias.innerHTML = 'ALIAS.DEFAULT.PLACEHOLDER';
+      saldo_ars.innerHTML = '11.808,99';
+      saldo_usd.innerHTML = '21,45';
+   }
+   
+}
+
+
 function actualizarPagina(){
    saldoCuenta();
    cotizacionDolar();
 }
 
 document.addEventListener("DOMContentLoaded", actualizarPagina,false);
+
 
