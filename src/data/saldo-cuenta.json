@@ -1,0 +1,17 @@
+{
+    "nombre": "Nicolas",
+    "apellido": "Korzusehec",
+    "id_cuenta": "123-456789/5",
+    "id_tipo": "1",
+    "tipo_cuenta": "Cuenta única",
+    "saldo": {
+        "ars": "11.808,99",
+        "usd": "21,45"
+    },
+    "cbu": "0764645887200057372954",
+    "alias": "ALIAS.DEFAULT.PLACEHOLDER",
+    "ultimo_acceso": {
+        "fecha": "14/05/22",
+        "hora": "18:30"
+    }
+}
