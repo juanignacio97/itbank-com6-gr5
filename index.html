@@ -27,6 +27,7 @@
                 <a><img src="src/img/browser-icon.png" alt="ITBANK-LOGO" style="height: 64px; width: 64px; user-select: none" /></a>
                 <span class="disabled fs-1" id="logo">ITBANK</span>
                 <a id="profile" class="nav-btn ms-auto" type="button" title="Menú">
+                    <!--default view-->
                     <span>Waiting...</span>
                     &nbsp;
                     <i class="fa-regular fa-circle-user"></i>
@@ -134,7 +135,7 @@
                     <div class="d-flex align-items-center">
                         <h3 class="ms-4">Cotización del dolar HOY</h3>
                         <!--Boton que actualiza la impresion el apartado-->
-                        <button class="btn btn-sm btn-outline-secondary ms-3" onclick="cotizacionDolar()"><i class="fa-solid fa-arrow-rotate-right"></i> Actualizar</button>
+                        <button class="btn btn-sm btn-outline-secondary ms-3" onclick="fetchCotizaciones()"><i class="fa-solid fa-arrow-rotate-right"></i> Actualizar</button>
                         <!--el selector pdf para el evento que descargue el pdf-->
                         <button id="pdf" onclick="descargarPdf()" class="btn btn-sm btn-outline-secondary ms-3">Descargar PDF</button>
                         <!--el selector xsl para el evento que descargue el excel-->
