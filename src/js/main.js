@@ -60,33 +60,32 @@ async function fetchCotizaciones() {
 
 //Función que agrega dinámicamente a la página contenido de cotizaciones
 function displayCotizacionDolar() {
-    /*Pendiente agregar en formato
-   <p>Variacion: ${caso.casa.variacion}</p>*/
     sectionCotizaciones.innerHTML = '';
     for (let i = 0; i < cotizaciones.length - 3; i++) {
         sectionCotizaciones.innerHTML += `
       <div class="col-12 col-sm-6 col-md-4">
          <div class="card text-center m-2">
             <div class="card-header">
-               <i class="fa-solid fa-money-bill-wave" style="color:green"></i> 
+               <i class="fa-solid fa-money-bill-wave" style="color:green;"></i> 
                ${cotizaciones[i].casa.nombre.toUpperCase()}
             </div>
-            <div class="row card-body">
+            <div class="row card-body pb-1">
                <div class="col-6 col-sm-12 col-xl-6">
-                     <p class="card-text">COMPRA</p>
+                     <p class="card-text mb-1">COMPRA</p>
                      <h3 class="card-title">
                      ${isNaN(parseFloat(cotizaciones[i].casa.compra)) ? 'No Cotiza' : parseFloat(cotizaciones[i].casa.compra.replace(',', '.')).toFixed(2).replace('.', ',')}
                      </h3>
                </div>
                <div class="col-6 col-sm-12 col-xl-6">
-                     <p class="card-text">VENTA</p>
+                     <p class="card-text mb-1">VENTA</p>
                      <h3 class="card-title">
                      ${isNaN(parseFloat(cotizaciones[i].casa.venta)) ? 'No Cotiza' : parseFloat(cotizaciones[i].casa.venta.replace(',', '.')).toFixed(2).replace('.', ',')}
                      </h3>
                </div>
+               <p class="card-text text-muted" style="font-size:smaller;">VARIACIÓN: ${cotizaciones[i].casa.variacion}</p>
             </div>
             <div class="card-footer text-muted">
-            ACTUALIZADO: ${cotizaciones[cotizaciones.length - 1].casa.fecha} ${cotizaciones[cotizaciones.length - 1].casa.recorrido}
+            ACTUALIZADO: ${cotizaciones[cotizaciones.length - 1].casa.fecha} ${cotizaciones[cotizaciones.length - 1].casa.recorrido} hs
             </div>
          </div>
       </div>`;
