@@ -73,11 +73,15 @@ function displayCotizacionDolar() {
             <div class="row card-body">
                <div class="col-6 col-sm-12 col-xl-6">
                      <p class="card-text">COMPRA</p>
-                     <h3 class="card-title">${cotizaciones[i].casa.compra}</h3>
+                     <h3 class="card-title">
+                     ${isNaN(parseFloat(cotizaciones[i].casa.compra)) ? 'No Cotiza' : ((parseFloat(cotizaciones[i].casa.compra.replace(',', '.'))).toFixed(2)).replace('.',',')}
+                     </h3>
                </div>
                <div class="col-6 col-sm-12 col-xl-6">
                      <p class="card-text">VENTA</p>
-                     <h3 class="card-title">${cotizaciones[i].casa.venta}</h3>
+                     <h3 class="card-title">
+                     ${isNaN(parseFloat(cotizaciones[i].casa.venta)) ? 'No Cotiza' : ((parseFloat(cotizaciones[i].casa.venta.replace(',', '.'))).toFixed(2)).replace('.',',')}
+                     </h3>
                </div>
             </div>
             <div class="card-footer text-muted">
@@ -87,13 +91,6 @@ function displayCotizacionDolar() {
       </div>`
     
    }
-      /*pendiente:
-      let correccionDecimal = caso.casa.compra;
-       console.log(typeof correccionDecimal !== 'string');
-       //tratando corregir que solo hayan 2 decimales, no hubo cambios
-       if (typeof correccionDecimal !== 'string') {
-           correccionDecimal = Number(caso.casa.compra).toFixed(2);
-       }*/
 };
 
 //Función que agrega la funcionalidad de descargar el pdf del ID seleccionado. Utiliza la librería HTML2PDF
