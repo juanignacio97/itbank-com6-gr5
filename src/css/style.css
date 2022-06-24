@@ -28,8 +28,12 @@ footer .container-fluid {
 }
 
 .service-button {
-    height: 160px;
-    width: 160px;
+    min-width: 172px;
+}
+
+.service-img {
+    height: 48px;
+    width: 48px;
 }
 
 #cotizacion-dolar .card-footer {

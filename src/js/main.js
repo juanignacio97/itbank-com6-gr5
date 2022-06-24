@@ -16,7 +16,7 @@ var cotizaciones; //aca se almacena el fetch del dolar
 async function fetchCuenta() {
     const response = await fetch(cuenta_url);
     cuenta = await response.json();
-    chkOcultarDatos.checked = cuenta.config.ocultar_datos === 'true';
+    chkOcultarDatos.checked = cuenta.config.ocultar_datos;
     displayProfile();
     displaySaldoCuenta();
 }

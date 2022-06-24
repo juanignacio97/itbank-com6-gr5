@@ -16,6 +16,6 @@
         "hora": "18:30"
     },
     "config": {
-        "ocultar_datos": "false"
+        "ocultar_datos": false
     }
 }
