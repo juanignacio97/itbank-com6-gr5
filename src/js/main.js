@@ -8,7 +8,7 @@ const chkOcultarDatos = document.querySelector('#ocultar-datos');
 const cuenta = {
     nombre: '',
     apellido: '',
-	email: '',
+    email: '',
     id_cuenta: '',
     id_tipo: '',
     tipo_cuenta: '',
@@ -116,12 +116,12 @@ async function fetchCuenta() {
     cuenta.alias = data.alias;
     cuenta.ultimo_acceso.fecha = data.ultimo_acceso.fecha;
     cuenta.ultimo_acceso.hora = data.ultimo_acceso.hora;
-	displayProfile();
+    displayProfile();
     displaySaldoCuenta();
 }
 
 function displayProfile() {
-	linkProfile.innerHTML = `
+    linkProfile.innerHTML = `
 	<span>${cuenta.nombre} ${cuenta.apellido}</span>
 	&nbsp;
 	<i class="fa-regular fa-circle-user"></i>`;
