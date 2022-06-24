@@ -27,9 +27,9 @@ footer .container-fluid {
     background-color: #4c71bb;
 }
 
-.buttons {
-    background-color: #e5e5e5;
-    padding: 20px;
+.service-button {
+    height: 160px;
+    width: 160px;
 }
 
 #cotizacion-dolar .card-footer {
