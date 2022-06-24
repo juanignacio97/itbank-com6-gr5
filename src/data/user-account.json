@@ -6,13 +6,16 @@
     "id_tipo": "1",
     "tipo_cuenta": "Cuenta única",
     "saldo": {
-        "ars": "11808.55",
-        "usd": "21.45"
+        "ars": "11808.556",
+        "usd": "21.451"
     },
     "cbu": "0764645887200057372954",
     "alias": "ALIAS.DEFAULT.PLACEHOLDER",
     "ultimo_acceso": {
         "fecha": "14/05/22",
         "hora": "18:30"
+    },
+    "config": {
+        "ocultar_datos": "false"
     }
 }
