@@ -108,6 +108,7 @@ async function fetchCuenta() {
     let data = await response.json();
     cuenta.nombre = data.nombre;
     cuenta.apellido = data.apellido;
+    cuenta.email = data.email;
     cuenta.id_cuenta = data.id_cuenta;
     cuenta.tipo_cuenta = data.tipo_cuenta;
     cuenta.saldo.ars = data.saldo.ars;
