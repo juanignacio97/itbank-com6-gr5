@@ -111,8 +111,8 @@ async function fetchCuenta() {
     cuenta.email = data.email;
     cuenta.id_cuenta = data.id_cuenta;
     cuenta.tipo_cuenta = data.tipo_cuenta;
-    cuenta.saldo.ars = data.saldo.ars;
-    cuenta.saldo.usd = data.saldo.usd;
+    cuenta.saldo.ars = parseFloat(data.saldo.ars);
+    cuenta.saldo.usd = parseFloat(data.saldo.usd);
     cuenta.cbu = data.cbu;
     cuenta.alias = data.alias;
     cuenta.ultimo_acceso.fecha = data.ultimo_acceso.fecha;
@@ -129,6 +129,7 @@ function displayProfile() {
 }
 
 function displaySaldoCuenta() {
+    const currencyFormat = Intl.NumberFormat("es-AR");
     sectionSaldo.innerHTML = `
     <div class="card-header d-flex align-items-center">
       <span class="me-auto fs-4 fw-semibold">Caja de Ahorro</span>
@@ -140,9 +141,9 @@ function displaySaldoCuenta() {
          &nbsp;
          <span>${chkOcultarDatos.checked ? '***-******/*' : cuenta.id_cuenta}</span>
       </p>
-      <h4 class="card-text mb-2">$ <span class="fw-bold">${chkOcultarDatos.checked ? '***' : cuenta.saldo.ars}</span></h4>
+      <h4 class="card-text mb-2">$ <span class="fw-bold">${chkOcultarDatos.checked ? '***' : currencyFormat.format(cuenta.saldo.ars)}</span></h4>
 
-      <h5 class="card-text text-success mb-3">U$S <span class="fw-bold">${chkOcultarDatos.checked ? '***' : cuenta.saldo.usd}</span></h5>
+      <h5 class="card-text text-success mb-3">U$S <span class="fw-bold">${chkOcultarDatos.checked ? '***' : currencyFormat.format(cuenta.saldo.usd)}</span></h5>
 
       <p class="card-text">CBU: <span class="fw-semibold">${chkOcultarDatos.checked ? '******' : cuenta.cbu}</span></p>
 
