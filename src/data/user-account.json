@@ -1,6 +1,7 @@
 {
-    "nombre": "Nicolas",
-    "apellido": "Korzusehec",
+    "nombre": "Jhon",
+    "apellido": "Doe",
+    "email": "email@example.com",
     "id_cuenta": "123-456789/5",
     "id_tipo": "1",
     "tipo_cuenta": "Cuenta única",

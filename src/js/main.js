@@ -1,5 +1,6 @@
 const api_url = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales'; //API para las cotizaciones
 
+const linkProfile = document.querySelector('#profile');
 const sectionCotizaciones = document.querySelector('#cotizacion-dolar .container .row');
 const sectionSaldo = document.querySelector('#saldo-cuenta .card');
 const chkOcultarDatos = document.querySelector('#ocultar-datos');
@@ -7,6 +8,7 @@ const chkOcultarDatos = document.querySelector('#ocultar-datos');
 const cuenta = {
     nombre: '',
     apellido: '',
+	email: '',
     id_cuenta: '',
     id_tipo: '',
     tipo_cuenta: '',
@@ -101,8 +103,8 @@ function descargarPdf() {
         .finally();
 }
 
-async function getSaldoCuenta() {
-    const response = await fetch('http://127.0.0.1:5500/src/data/saldo-cuenta.json');
+async function fetchCuenta() {
+    const response = await fetch('http://127.0.0.1:5500/src/data/user-account.json');
     let data = await response.json();
     cuenta.nombre = data.nombre;
     cuenta.apellido = data.apellido;
@@ -114,7 +116,15 @@ async function getSaldoCuenta() {
     cuenta.alias = data.alias;
     cuenta.ultimo_acceso.fecha = data.ultimo_acceso.fecha;
     cuenta.ultimo_acceso.hora = data.ultimo_acceso.hora;
+	displayProfile();
     displaySaldoCuenta();
+}
+
+function displayProfile() {
+	linkProfile.innerHTML = `
+	<span>${cuenta.nombre} ${cuenta.apellido}</span>
+	&nbsp;
+	<i class="fa-regular fa-circle-user"></i>`;
 }
 
 function displaySaldoCuenta() {
@@ -127,20 +137,20 @@ function displaySaldoCuenta() {
       <p class="card-text mb-3">
          <span class="fw-semibold">${cuenta.tipo_cuenta}</span>
          &nbsp;
-         <span>${chkOcultarDatos.checked ? cuenta.id_cuenta : '***-******/*'}</span>
+         <span>${chkOcultarDatos.checked ? '***-******/*' : cuenta.id_cuenta}</span>
       </p>
-      <h4 class="card-text mb-2">$ <span class="fw-bold">${chkOcultarDatos.checked ? cuenta.saldo.ars : '***'}</span></h4>
+      <h4 class="card-text mb-2">$ <span class="fw-bold">${chkOcultarDatos.checked ? '***' : cuenta.saldo.ars}</span></h4>
 
-      <h5 class="card-text text-success mb-3">U$S <span class="fw-bold">${chkOcultarDatos.checked ? cuenta.saldo.usd : '***'}</span></h5>
+      <h5 class="card-text text-success mb-3">U$S <span class="fw-bold">${chkOcultarDatos.checked ? '***' : cuenta.saldo.usd}</span></h5>
 
-      <p class="card-text">CBU: <span class="fw-semibold">${chkOcultarDatos.checked ? cuenta.cbu : '******'}</span></p>
+      <p class="card-text">CBU: <span class="fw-semibold">${chkOcultarDatos.checked ? '******' : cuenta.cbu}</span></p>
 
-      <p class="card-text">Alias: <span class="fw-semibold">${chkOcultarDatos.checked ? cuenta.alias : '******'}</span></p>
+      <p class="card-text">Alias: <span class="fw-semibold">${chkOcultarDatos.checked ? '******' : cuenta.alias}</span></p>
     </div>`;
 }
 
 function actualizarPagina() {
-    getSaldoCuenta();
+    fetchCuenta();
     cotizacionDolar();
 }
 
